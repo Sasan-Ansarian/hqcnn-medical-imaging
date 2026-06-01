@@ -1,0 +1,26 @@
+experiment:
+  name: model_a_frozen_seed42
+  seed: 42
+  output_dir: outputs/baseline
+
+dataset:
+  name: dermamnist
+  root: data/
+  use_subset: false
+
+model:
+  name: resnet18_small_baseline_frozen
+  pretrained_backbone: null
+
+training:
+  epochs: 20
+  batch_size: 128
+  freeze_backbone: true
+  use_warmup: false
+  optimizer: adamw
+  lr: 5e-4
+  weight_decay: 0.01
+  num_workers: 4
+  selection_metric: val_macro_f1
+  loss:
+    use_class_weights: false

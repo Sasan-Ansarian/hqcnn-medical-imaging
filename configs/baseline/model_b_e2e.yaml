@@ -1,0 +1,29 @@
+experiment:
+  name: model_b_e2e_seed42
+  seed: 42
+  output_dir: outputs/baseline
+
+dataset:
+  name: dermamnist
+  root: data/
+  use_subset: false
+
+model:
+  name: resnet18_bottleneck_32_8_e2e
+  pretrained_backbone: null
+
+training:
+  epochs: 20
+  batch_size: 128
+  freeze_backbone: false
+  use_warmup: true
+  warmup_epochs: 2
+  optimizer: adamw
+  backbone_lr: 5e-5
+  head_lr: 5e-4
+  weight_decay: 0.01
+  num_workers: 4
+  selection_metric: val_macro_f1
+  loss:
+    use_class_weights: true
+    class_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
