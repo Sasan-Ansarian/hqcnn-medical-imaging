@@ -1,0 +1,20 @@
+experiment:
+  name: dermamnist_efficientnet_b0_v1
+  seed: 42
+  output_dir: outputs
+
+dataset:
+  name: dermamnist
+  root: /scratch/lustre/home/saan1491/hqcnn_project/data
+
+model:
+  name: efficientnet_b0
+  num_classes: 7
+
+training:
+  epochs: 5
+  batch_size: 128
+  num_workers: 4
+  device: cuda
+  lr: 0.00005
+  weight_decay: 0.01

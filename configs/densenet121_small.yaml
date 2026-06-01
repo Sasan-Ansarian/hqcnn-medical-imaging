@@ -1,0 +1,34 @@
+model_name: densenet121_small
+experiment:
+  name: "debug_run"
+  seed: 42
+  output_dir: "outputs"
+
+dataset:
+  name: "TBD"
+  num_classes: null
+  image_size: null
+  channels: null
+
+training:
+  device: "cuda"
+  epochs: 1
+  batch_size: 16
+  lr: 0.001
+  weight_decay: 0.0
+  num_workers: 2
+
+cv:
+  enabled: false
+  n_splits: 5
+  stratified: true
+
+model:
+  backbone: "resnet18"
+  bottleneck_dim: 4
+  head_type: "baseline"
+
+quantum:
+  n_qubits: 4
+  depth: 2
+  ansatz: "strongly_entangling"

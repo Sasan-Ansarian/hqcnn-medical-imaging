@@ -1,0 +1,22 @@
+experiment:
+  name: dermamnist_A_kfold_fold1
+  seed: 42
+  output_dir: /scratch/lustre/home/saan1491/hqcnn_project/outputs
+
+dataset:
+  root: /scratch/lustre/home/saan1491/hqcnn_project/data
+  use_kfold: true
+  fold_index: 1
+  n_splits: 5
+
+training:
+  batch_size: 128
+  num_workers: 4
+  device: cuda
+  epochs: 20
+  lr: 0.0005
+  weight_decay: 0.01
+
+model:
+  name: resnet18_small_baseline_frozen
+  pretrained_backbone: /scratch/lustre/home/saan1491/hqcnn_project/outputs/dermamnist_resnet18_small_v2_seed42/best_model.pt

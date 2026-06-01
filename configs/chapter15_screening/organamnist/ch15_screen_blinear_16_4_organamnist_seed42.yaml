@@ -1,0 +1,29 @@
+experiment:
+  name: ch15_screen_blinear_16_4_organamnist_seed42
+  seed: 42
+  output_dir: /scratch/lustre/home/saan1491/hqcnn_project/outputs/chapter15_screening/organamnist
+
+dataset:
+  name: organamnist
+  root: /scratch/lustre/home/saan1491/hqcnn_project/data
+  use_subset: false
+
+training:
+  batch_size: 128
+  num_workers: 4
+  device: cuda
+  epochs: 20
+
+  optimizer: adamw
+  backbone_lr: 0.00005
+  head_lr: 0.0005
+  weight_decay: 0.01
+
+  freeze_backbone: true
+  use_warmup: false
+
+  selection_metric: val_macro_f1
+
+model:
+  name: resnet18_bottleneck_linear_16_4_e2e
+  pretrained_backbone: /scratch/lustre/home/saan1491/hqcnn_project/outputs/chapter15_archive_pilot/organamnist/organamnist_resnet18_small_seed42/best_model.pt

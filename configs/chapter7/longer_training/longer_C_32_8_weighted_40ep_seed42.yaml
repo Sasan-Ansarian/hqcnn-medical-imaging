@@ -1,0 +1,30 @@
+experiment:
+  name: c7_longer_C_32_8_weighted_40ep_seed42
+  seed: 42
+  output_dir: /scratch/lustre/home/saan1491/hqcnn_project/outputs/chapter7/longer_training
+
+dataset:
+  root: /scratch/lustre/home/saan1491/hqcnn_project/data
+
+training:
+  batch_size: 128
+  num_workers: 4
+  device: cuda
+  epochs: 40
+  lr: 0.0005
+  weight_decay: 0.01
+
+  loss:
+    use_class_weights: true
+    class_weights:
+      - 4.390350877192983
+      - 2.788300835654596
+      - 1.3016905071521456
+      - 12.5125
+      - 1.2849807445442876
+      - 0.21329639889196675
+      - 10.11111111111111
+
+model:
+  name: resnet18_quantum_32_8_frozen
+  pretrained_backbone: /scratch/lustre/home/saan1491/hqcnn_project/outputs/dermamnist_resnet18_small_v2_seed42/best_model.pt

@@ -1,0 +1,24 @@
+experiment:
+  name: organamnist_resnet18_small_seed42
+  seed: 42
+  output_dir: /scratch/lustre/home/saan1491/hqcnn_project/outputs/chapter16/organamnist
+
+dataset:
+  name: organamnist
+  root: /scratch/lustre/home/saan1491/hqcnn_project/data
+  use_subset: false
+
+training:
+  batch_size: 128
+  num_workers: 4
+  device: cuda
+  epochs: 20
+
+  optimizer: adamw
+  lr: 0.0005
+  weight_decay: 0.01
+
+  selection_metric: val_macro_f1
+
+model:
+  name: resnet18_small_baseline

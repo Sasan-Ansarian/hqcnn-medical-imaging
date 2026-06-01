@@ -1,0 +1,19 @@
+experiment:
+  name: dermamnist_A_frozen_seed84
+  seed: 84
+  output_dir: /scratch/lustre/home/saan1491/hqcnn_project/outputs
+
+dataset:
+  root: /scratch/lustre/home/saan1491/hqcnn_project/data
+
+training:
+  batch_size: 128
+  num_workers: 4
+  device: cuda
+  epochs: 20
+  lr: 0.0005
+  weight_decay: 0.01
+
+model:
+  name: resnet18_small_baseline_frozen
+  pretrained_backbone: /scratch/lustre/home/saan1491/hqcnn_project/outputs/dermamnist_resnet18_small_v2_seed42/best_model.pt

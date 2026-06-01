@@ -1,0 +1,20 @@
+experiment:
+  name: dermamnist_resnet18_bottleneck_4_test
+  seed: 42
+  output_dir: outputs
+
+dataset:
+  name: dermamnist
+  root: /scratch/lustre/home/saan1491/hqcnn_project/data
+
+model:
+  name: resnet18_bottleneck_4
+  num_classes: 7
+
+training:
+  epochs: 5
+  batch_size: 128
+  num_workers: 4
+  device: cuda
+  lr: 0.00005
+  weight_decay: 0.01

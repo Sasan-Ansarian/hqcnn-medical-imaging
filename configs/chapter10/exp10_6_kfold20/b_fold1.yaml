@@ -1,0 +1,44 @@
+experiment:
+  name: ch10_b16_kfold20_fold1_seed42
+  output_dir: /scratch/lustre/home/saan1491/hqcnn_project/outputs/chapter10/exp10_6_kfold20
+  seed: 42
+
+dataset:
+  root: /scratch/lustre/home/saan1491/hqcnn_project/data
+  use_kfold: true
+  fold_index: 1
+  n_splits: 5
+  kfold_train_subset_fraction: 0.20
+  kfold_train_subset_seed: 42
+
+training:
+  batch_size: 128
+  num_workers: 4
+  device: cuda
+  epochs: 20
+
+  optimizer: adamw
+  weight_decay: 0.01
+
+  use_warmup: true
+  warmup_epochs: 2
+
+  backbone_lr: 0.00005
+  head_lr: 0.0005
+
+  selection_metric: val_macro_f1
+
+  loss:
+    use_class_weights: true
+    class_weights:
+      - 4.390350877192983
+      - 2.788300835654596
+      - 1.3016905071521456
+      - 12.5125
+      - 1.2849807445442876
+      - 0.21329639889196675
+      - 10.11111111111111
+
+model:
+  name: resnet18_bottleneck_16_4_e2e
+  pretrained_backbone: /scratch/lustre/home/saan1491/hqcnn_project/outputs/dermamnist_resnet18_small_v2_seed42/best_model.pt
