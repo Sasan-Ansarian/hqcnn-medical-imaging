@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Data — MedMNIST downloads automatically
+data/medmnist/
+*.npz
+*.npy
+
+# Model checkpoints and outputs (too large for GitHub)
+outputs/
+checkpoints/
+*.pt
+*.pth
+*.pkl
+*.h5
+
+# Results (raw HPC output files)
+results/
+logs/
+*.log
+*.out
+*.err
+
+# Experiment splits (generated automatically)
+splits/
+
+# Archive and working directories
+archive/
+report_*/
+github_release*/
+*_frozen/
+*_v1/
+*_v2/
+*_v3/
+*_v4/
+*_v5/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Slurm job outputs
+slurm-*.out
+slurm_logs/
+
+# Large report files (keep only PDF in docs/)
+*.md.bak
+FULL_REPORT_*.md
+report_inventory.txt
