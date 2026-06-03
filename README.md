@@ -2,8 +2,6 @@
 
 **Hybrid Quantum–Classical Convolutional Neural Networks under Fair Baselines**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Sasan-Ansarian/hqcnn-medical-imaging/blob/main/notebooks/demo_colab.ipynb)
-
 
 A controlled benchmarking study of hybrid quantum–classical CNN models for medical image classification, developed as part of a PhD Deep Neural Networks course at Vilnius University, Faculty of Mathematics and Informatics.
 
