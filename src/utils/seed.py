@@ -10,7 +10,7 @@ def set_seed(seed: int) -> None:
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
 
-    # Determinism (good for thesis/report); can reduce speed slightly.
+    # Determinism; can reduce speed slightly.
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
 
