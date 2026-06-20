@@ -106,7 +106,7 @@ hqcnn-medical-imaging/
 │   └── train_array.sbatch      # Array job for multi-seed runs
 │
 ├── notebooks/
-│   └── demo_colab.ipynb        # Colab-ready demonstration notebook
+│   └── demo_colab.ipynb        
 │
 ├── docs/
 │   └── report.pdf              # Final course report
